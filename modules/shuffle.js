@@ -1,5 +1,5 @@
 function immutableShuffle(array) {
-  const clonedArray = Array.from(array);
+  const clonedArray = Array.from(array); // Create a new array to not mutate the existing one.
 
   for (let index = clonedArray.length - 1; index > 0; index -= 1) {
     const randomIndex = Math.floor(Math.random() * (index + 1));
