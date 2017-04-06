@@ -13,7 +13,7 @@ function immutableShuffle(array) {
 }
 
 module.exports = function shuffle(array) {
-  if (array.length > 1) {
+  if (array && array.length > 1) {
     return immutableShuffle(array);
   }
 

@@ -4,6 +4,10 @@ const shuffle = require('../modules/shuffle');
 const assert = require('assert');
 
 describe('Shuffle', () => {
+  it('should return null given null', () => {
+    assert.equal(shuffle(null), null);
+  });
+
   it('should return an empty array when given empty array', () => {
     assert.deepEqual(shuffle([]), []);
   });
@@ -13,8 +17,12 @@ describe('Shuffle', () => {
   });
 
   it('should return a shuffled array given length > 1 and different values', () => {
-    const arr = [1, 2, 3, 4];
-    const shuffled = shuffle(arr);
-    assert.notDeepEqual(shuffled, arr);
+    const list = [1, 2, 3, 4];
+    assert.notDeepEqual(shuffle(list), list);
+  });
+
+  it('should return a shuffled array given object values', () => {
+    const list = [{ name: 'Johnny' }, { name: 'Alex' }, { name: 'George' }, { name: 'Marta' }];
+    assert.notDeepEqual(shuffle(list), list);
   });
 });
